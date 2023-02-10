@@ -100,7 +100,7 @@ def run(
 
         # Process predictions
         for i, det in enumerate(pred):  # per image
-            seen += 1                     
+            seen += 1
             p, im0, frame = path, im0s.copy(), getattr(dataset, 'frame', 0)
 
             p = Path(p)  # to Path
