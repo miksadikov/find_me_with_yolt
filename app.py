@@ -24,7 +24,8 @@ def upload_file():
         if not file:
             return
 
-        shutil.rmtree(ROOT / 'runs/detect/exp')
+        if os.path.exists(ROOT / 'runs/detect/exp'):
+            shutil.rmtree(ROOT / 'runs/detect/exp')
         dir = ROOT / 'data/images'
         for F in os.listdir(dir):
             os.remove(os.path.join(dir, F))
